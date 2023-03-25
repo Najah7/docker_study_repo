@@ -26,6 +26,21 @@ docker --help
 docker
 ```
 
+### Docker Hubにログイン
+<hr>
+
+```bash
+docker login <server>
+```
+
+※\<server\>を指定しない場合、デフォルトのサーバに
+
+### Docker Hubをログアウト
+
+```bash
+docker logout 
+```
+
 ### Docker コマンドの基本構造
 <hr>
 
