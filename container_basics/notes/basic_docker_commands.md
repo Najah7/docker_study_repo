@@ -49,3 +49,16 @@ new: docker <sub-command> (options)
     or
 old: docker <command> (options)
 ```
+### dockerのシステム（イメージとコンテナ）に対するコマンド
+<hr>
+
+```bash
+docker system <sub-command> (options)
+```
+
+### dockerのシステム（イメージとコンテナ）の情報を確認
+<hr>
+
+```bash
+docker system df
+```
