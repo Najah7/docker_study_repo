@@ -80,3 +80,9 @@ docker container inspect <container id>
 ```bash
 docker container stats <container id>
 ```
+### Containerを一括削除
+<hr>
+
+```bash
+docker container prune
+```
