@@ -1,4 +1,4 @@
-# 3つのNodeのコンテナを違うマシンに用意して、Swarmを使って操作する
+# 3つのコンテナを違うマシンに用意して、Swarmを使って操作する
 
 ## 環境の作り方の方法
 - play-with-docker.comで3つのOSを用意する
@@ -42,6 +42,15 @@ docker swarm join --token <token> <IPアドレス>:2377
 docker node update --role manager <nodeのID>
 ```
 
+4. サービスの作成（3つのマシンで同時にコンテナを作成）
+<hr>
+
+```bash
+docker service create alpine ping 8.8.8.8
+```
+
+
+
 ## その他のよく使ったコマンド
 
 ### ノードの確認
@@ -58,3 +67,8 @@ docker node ls
 docker swarm join-token <role>
 ```
 
+### Swarmの確認に使える簡易的なコンテナと確認するためのコマンド
+
+```bash
+docker service create alpine ping 8.8.8.8
+```
