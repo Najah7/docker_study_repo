@@ -13,3 +13,6 @@ Interface Configration。UNIXやLinuxなどのオペレーティングシステ�
 ### ``` ping <ip address or domain name> ```
 通信の確認につかう。
 Dockerの場合「docker container exec -it <container> ping <container>」
+
+### echo 'sample' | echo 'This is' -
+「-」を使うことで、前のパイプで出力された標準入力または標準出力を受け取れる。
