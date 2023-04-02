@@ -1,13 +1,9 @@
-# version isn't needed as of 2020 for docker compose CLI. 
-# All 2.x and 3.x features supported
-# version: '2'
-# NOTE: move this answer file up a directory so it'll work
+version: '3.1'
 
 services:
 
   drupal:
-    image: custom-drupal
-    build: .
+    image: drupal:8.2
     ports:
       - "8080:80"
     volumes:
@@ -19,7 +15,9 @@ services:
   postgres:
     image: postgres:14.3
     environment:
-      - POSTGRES_PASSWORD=mypasswd
+      - POSTGRES_PASSWORD_FILE=/run/secrets/psql-pw
+    secrets:
+      - psql-pw
     volumes:
       - drupal-data:/var/lib/postgresql/data
 
@@ -29,3 +27,9 @@ volumes:
   drupal-profiles:
   drupal-sites:
   drupal-themes:
+
+secrets:
+  psql-pw:
+  # 外部にあるシークレットを参照するという設定👇（Swarmnのコマンドでsecretを作成する）
+    external: true
+      
