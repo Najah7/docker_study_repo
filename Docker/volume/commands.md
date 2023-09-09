@@ -1,40 +1,18 @@
-# ボリューム関係のコマンド
+# docker volumeコマンド
 
-## ボリュームの作成
-<br>
-```bash
-docker volume create <volume name>
-```
+| コマンド | 説明 |
+|:---|:---|
+| `docker volume create <volume name>` | ボリュームの作成 |
+| `docker volume rm <volume name>` | ボリュームの削除 |
+| `docker volume ls` | ボリュームの一覧表示 |
+| `docker volume inspect <volume name>` | ボリュームの詳細情報表示 |
+| `docker volume prune` | 未使用のボリュームの削除 |
 
-## ボリュームの削除
-<br>
-```bash
-docker volume rm <volume name>
-```
+# ボリューム関係のオプション
 
-## ボリュームの確認
-<br>
-```bash
-docker volume ls
-```
+| オプション | 説明 |
+|:---|:---|
+| `--mount source=<volume name>,target=<container path>`| ボリュームのマウント(「=」でも可) |
+| `-v(--volume) <volume name>:<container path>` | ボリュームのマウント |
 
-## ボリュームの詳細情報確認
-<br>
-```bash
-docker volume inspect <volume name>
-```
-
-※これでボリュームの位置などが確認できる。
-
-## containerの起動時にボリュームをマウントする
-<br>
-```bash
-docker container run -it --name <container name> --mount source=<volume name>,target=<container path> <image name>
-```
-
-## containerの起動時にボリュームをマウントする(ショートハンド)
-<br>
-```bash
-docker container run -it --name <container name> -v <volume name>:<container path> <image name>
-```
-
+※`docker container run`のオプションとして使用する。
