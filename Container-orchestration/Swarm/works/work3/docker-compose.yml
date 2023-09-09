@@ -30,6 +30,6 @@ volumes:
 
 secrets:
   psql-pw:
-  # 外部にあるシークレットを参照するという設定👇（Swarmnのコマンドでsecretを作成する）
+  # 外部にあるシークレットを参照するという設定👇（Swarmnのコマンドでsecretを作成できるようにする設定）
     external: true
       
